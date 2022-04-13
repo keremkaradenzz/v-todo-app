@@ -1,8 +1,9 @@
 import Button from '@mui/material/Button';
+import './styles.scss';
 
-const TodoButton = ({value}) => {
+const TodoButton = ({value, onClick}) => {
     return (
-        <Button variant="contained">{value}</Button>
+        <Button onClick={onClick} variant="contained">{value}</Button>
     )
 }
 

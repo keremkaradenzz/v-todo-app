@@ -1,0 +1,6 @@
+@import '../../styles/typography.scss';
+
+button[class*="MuiButton-root"]{
+    text-transform: initial;
+    font-size: $p-font-size-medium;
+}
