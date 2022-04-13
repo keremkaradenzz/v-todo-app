@@ -22,9 +22,17 @@ export const deleteTodo = (id) => {
     }
 }
 
+export const completedTodo = (id) => {
+    return {
+        type: types.COMPLETED_TODO,
+        payload: id
+    }
+}
+
 const todoActions = {
     addTodo,
     getTodos,
-    deleteTodo
+    deleteTodo,
+    completedTodo
 }
 export default todoActions;

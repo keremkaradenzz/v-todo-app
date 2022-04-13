@@ -14,7 +14,8 @@ const Todos = () => {
         event.preventDefault();
         dispatch(Actions.addTodo({
             id:uuid(),
-            name: value
+            name: value,
+            isCompleted:false
         }));
         setValue('');
     }

@@ -16,9 +16,17 @@ const todoReducer = (state = initialState, action) => {
                 todos: [...state.todos, action.payload]
             }
         case types.DELETE_TODO:
-            console.log('action', action.payload);
             return {
-                todos: state.todos.filter(item => item.id !== action.payload)
+                todos: state.todos.filter(item => item.id !== action.payload)
+            }
+        case types.COMPLETED_TODO:
+            return {
+                todos: state.todos.map(item => {
+                    if(item.id === action.payload){
+                        item.isCompleted = !item.isCompleted;
+                    }
+                    return item;
+                })
             }
         default:
             return {

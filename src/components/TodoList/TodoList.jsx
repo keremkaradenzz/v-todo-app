@@ -18,20 +18,25 @@ const TodoList = () => {
         dispatch(Actions.getTodos([]));
     }, [dispatch])
 
+    if (todos.length === 0) {
+        return <div>Not found Todos...</div>
+    }
 
     const deleteTodo = (id) => {
         dispatch(Actions.deleteTodo(id));
     }
-    if (todos.length === 0) {
-        return <div>Not found Todos...</div>
+
+    const completeTodo = (id)=>{
+        dispatch(Actions.completedTodo(id));
     }
+
 
     return (
         <List sx={{ width: '100%' }}>
             {todos && todos.length > 0 && todos.map((item, index) =>
                 <ListItem key={index}>
-                    <TodoCheckbox />
-                    <ListItemText primary={item.name} />
+                    <TodoCheckbox checked={item.isCompleted} onClick={()=> completeTodo(item.id)}/>
+                    <ListItemText primary={item.name} className={item.isCompleted && 'completed-text'}/>
                     <DeleteOutlineIcon  onClick={()=> deleteTodo(item.id)}/>
                 </ListItem>
             )}
