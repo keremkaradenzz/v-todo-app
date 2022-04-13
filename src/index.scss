@@ -1,0 +1,19 @@
+@import '../styles/typography.scss';
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: $base-font-size;
+    font-weight: $base-font-weight;
+    font-family: $body-font-family;
+
+    .main {
+        display: flex;
+        justify-content: center;
+        background-color: red;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        font-size: $p-font-size-large;
+    }
+}
