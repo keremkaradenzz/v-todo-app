@@ -18,8 +18,12 @@ const TodoList = () => {
         dispatch(Actions.getTodos([]));
     }, [dispatch])
 
+
+    const deleteTodo = (id) => {
+        dispatch(Actions.deleteTodo(id));
+    }
     if (todos.length === 0) {
-        return <div>Not found Todo...</div>
+        return <div>Not found Todos...</div>
     }
 
     return (
@@ -28,7 +32,7 @@ const TodoList = () => {
                 <ListItem key={index}>
                     <TodoCheckbox />
                     <ListItemText primary={item.name} />
-                    <DeleteOutlineIcon />
+                    <DeleteOutlineIcon  onClick={()=> deleteTodo(item.id)}/>
                 </ListItem>
             )}
         </List>

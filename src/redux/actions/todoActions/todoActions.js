@@ -15,10 +15,10 @@ export const addTodo = (todo) => {
 }
 
 
-export const deleteTodo = (todo) => {
+export const deleteTodo = (id) => {
     return {
-        type: types.ADD_TODO,
-        payload: todo
+        type: types.DELETE_TODO,
+        payload: id
     }
 }
 
