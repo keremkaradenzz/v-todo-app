@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 
 const TodoTextInput = () => {
   return (
-    <TextField  id="outlined-basic" variant="outlined"/>
+    <TextField  style={{width:"100%"}} id="outlined-basic" variant="outlined"/>
   )
 }
 

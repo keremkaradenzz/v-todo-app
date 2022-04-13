@@ -1,0 +1,17 @@
+ul[class*="MuiList-root"]{
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: 50px;
+    li{
+        border-bottom: 1px  solid gray;
+
+        &:last-child{
+            border: none;
+        }
+
+        svg[class*="MuiSvgIcon-root"]:last-child{
+            color:red;
+        }
+    }
+    
+}

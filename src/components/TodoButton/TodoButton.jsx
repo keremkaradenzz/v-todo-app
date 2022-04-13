@@ -1,8 +1,8 @@
 import Button from '@mui/material/Button';
 
-const TodoButton = () => {
+const TodoButton = ({value}) => {
     return (
-        <Button variant="contained">Contained</Button>
+        <Button variant="contained">{value}</Button>
     )
 }
 
