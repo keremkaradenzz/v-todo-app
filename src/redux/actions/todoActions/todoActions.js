@@ -1,5 +1,5 @@
 import * as types from "../types";
-import { fetchTodo, todoDelete, createTodo } from '../../../api/index';
+import { fetchTodo, todoDelete, createTodo, updateTodo } from '../../../api/index';
 
 export const getTodos = () => async dispatch =>{
     const { data } = await fetchTodo();
@@ -26,13 +26,12 @@ export const deleteTodo = (id) => async dispatch => {
     })
 }
 
-export const completedTodo = (id) => async dispatch =>  {
-    const { data } = await todoDelete(id);
+export const completedTodo = (id, todo) => async dispatch =>  {
+    const { data } = await updateTodo(id, todo);
     dispatch({
         type: types.COMPLETED_TODO,
-        payload: data
+        payload: data._id
     })
-
 }
 
 const todoActions = {
