@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiEndpoint = "http://localhost:5005/todos/";
+const apiEndpoint = "https://v-todo-app-be.herokuapp.com/todos/";
 
 export const fetchTodo = async () => {
     try{
