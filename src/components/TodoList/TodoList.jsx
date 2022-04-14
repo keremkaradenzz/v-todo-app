@@ -15,11 +15,11 @@ const TodoList = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(Actions.getTodos([]));
+        dispatch(Actions.getTodos());
     }, [dispatch])
 
     if (todos.length === 0) {
-        return <div>Not found Todos...</div>
+        return <div>Todos Not found ...</div>
     }
 
     const deleteTodo = (id) => {
@@ -35,9 +35,9 @@ const TodoList = () => {
         <List sx={{ width: '100%' }}>
             {todos && todos.length > 0 && todos.map((item, index) =>
                 <ListItem key={index}>
-                    <TodoCheckbox checked={item.isCompleted} onClick={()=> completeTodo(item.id)}/>
+                    <TodoCheckbox checked={item.isCompleted} onClick={()=> completeTodo(item._id)}/>
                     <ListItemText primary={item.name} className={item.isCompleted && 'completed-text'}/>
-                    <DeleteOutlineIcon  onClick={()=> deleteTodo(item.id)}/>
+                    <DeleteOutlineIcon  onClick={()=> deleteTodo(item._id)}/>
                 </ListItem>
             )}
         </List>

@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { v4 as uuid } from 'uuid';
 import Container from "../components/Container/Container";
 import TodoTextInput from "../components/TodoTextInput/TodoTextInput";
 import TodoButton from "../components/TodoButton/TodoButton";
@@ -13,7 +12,6 @@ const Todos = () => {
     const addTodo = (event) => {
         event.preventDefault();
         dispatch(Actions.addTodo({
-            id:uuid(),
             name: value,
             isCompleted:false
         }));
