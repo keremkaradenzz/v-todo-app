@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Container from "../components/Container/Container";
 import TodoTextInput from "../components/TodoTextInput/TodoTextInput";
 import TodoButton from "../components/TodoButton/TodoButton";
@@ -8,12 +8,12 @@ import Actions from '../redux/actions/todoActions/todoActions';
 
 const Todos = () => {
     const dispatch = useDispatch();
-    const [value , setValue] = useState('');
+    const [value, setValue] = useState('');
     const addTodo = (event) => {
         event.preventDefault();
         dispatch(Actions.addTodo({
             name: value,
-            isCompleted:false
+            isCompleted: false
         }));
         setValue('');
     }

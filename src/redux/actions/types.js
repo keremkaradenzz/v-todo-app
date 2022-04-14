@@ -8,3 +8,5 @@ export const UPDATE_TODO = 'UPDATE_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
 
 export const COMPLETED_TODO = 'COMPLETED_TODO';
+
+export const LOADING_TODO = 'LOADING_TODO';

@@ -2,6 +2,9 @@ import * as types from "../types";
 import { fetchTodo, todoDelete, createTodo, updateTodo } from '../../../api/index';
 
 export const getTodos = () => async dispatch =>{
+    dispatch({
+        type:types.LOADING_TODO,
+    })
     const { data } = await fetchTodo();
     dispatch({
         type: types.GET_TODOS,

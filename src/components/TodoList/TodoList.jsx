@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 const TodoList = () => {
-    const { todos } = useSelector(state => state.todos);
+    const { todos, loading } = useSelector(state => state.todos);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -34,10 +34,11 @@ const TodoList = () => {
 
     return (
         <List sx={{ width: '100%' }}>
-            {todos && todos.length > 0 && todos.map((item, index) =>
+            {loading ? <div className='loading'>Loading...</div> :
+            todos && todos.length > 0 && todos.map((item, index) =>
                 <ListItem key={index}>
                     <TodoCheckbox checked={item.isCompleted} onClick={()=> completeTodo(item)}/>
-                    <ListItemText primary={item.name} className={item.isCompleted && 'completed-text'}/>
+                      <ListItemText primary={item.name} className={item.isCompleted ? 'completed-text' : '' }/>
                     <DeleteOutlineIcon  onClick={()=> deleteTodo(item._id)}/>
                 </ListItem>
             )}
