@@ -26,23 +26,25 @@ const TodoList = () => {
         dispatch(Actions.deleteTodo(id));
     }
 
-    const completeTodo = (item)=>{
+    const completeTodo = (item) => {
         item.isCompleted = !item.isCompleted;
         dispatch(Actions.completedTodo(item._id, item));
     }
 
 
     return (
-        <List sx={{ width: '100%' }}>
-            {loading ? <div className='loading'>Loading...</div> :
-            todos && todos.length > 0 && todos.map((item, index) =>
-                <ListItem key={index}>
-                    <TodoCheckbox checked={item.isCompleted} onClick={()=> completeTodo(item)}/>
-                      <ListItemText primary={item.name} className={item.isCompleted ? 'completed-text' : '' }/>
-                    <DeleteOutlineIcon  onClick={()=> deleteTodo(item._id)}/>
-                </ListItem>
-            )}
-        </List>
+        <div className='todo-list'>
+            <List sx={{ width: '100%' }}>
+                {loading ? <div className='loading'>Loading...</div> :
+                    todos && todos.length > 0 && todos.map((item, index) =>
+                        <ListItem key={index}>
+                            <TodoCheckbox checked={item.isCompleted} onClick={() => completeTodo(item)} />
+                            <ListItemText primary={item.name} className={item.isCompleted ? 'completed-text' : ''} />
+                            <DeleteOutlineIcon onClick={() => deleteTodo(item._id)} />
+                        </ListItem>
+                    )}
+            </List>
+        </div>
 
     )
 }

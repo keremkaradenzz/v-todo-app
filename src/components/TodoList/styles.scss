@@ -1,30 +1,40 @@
-ul[class*="MuiList-root"]{
-    border: 1px solid gray;
-    border-radius: 5px;
-    margin-top: 50px;
-    li{
-        border-bottom: 1px  solid gray;
-
-        &:last-child{
-            border: none;
+.todo-list{
+    height: 300px;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 30px;
+    padding-right:15px;
+    ul[class*="MuiList-root"]{
+        border: 1px solid gray;
+        border-radius: 5px;
+        margin-top: 50px;
+        li{
+            border-bottom: 1px  solid gray;
+    
+            &:last-child{
+                border: none;
+            }
+    
+            svg[class*="MuiSvgIcon-root"]:last-child{
+                color:red;
+                cursor: 'pointer';
+            }
+    
+            .completed-text{
+                text-decoration: line-through;
+                background-color: green;
+                color: #fff;
+                border-radius: 10px;
+                padding:5px;
+            }
         }
-
-        svg[class*="MuiSvgIcon-root"]:last-child{
-            color:red;
-            cursor: 'pointer';
-        }
-
-        .completed-text{
-            text-decoration: line-through;
-            background-color: green;
-            color: #fff;
-            border-radius: 10px;
-            padding:5px;
+        .loading{
+            margin-left: 10px;
         }
     }
-    .loading{
-        margin-left: 10px;
-    }
+    
 }
+
 
 
