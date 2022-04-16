@@ -20,7 +20,14 @@ export const createTodo = async (data) => {
     }
 }
 
-export const updateTodo = async (id, data) => await axios.patch(`${apiEndpoint}${id}`, data);
+export const updateTodo = async (id, data) => {
+    try{
+        const response = await axios.patch(`${apiEndpoint}${id}`, data);
+        return response;
+    }catch(err){
+        console.log(err);
+    }
+}
 
 export const todoDelete = async (id) => {
     try{
@@ -31,4 +38,11 @@ export const todoDelete = async (id) => {
      }
 }
 
-export const getByIdTodo = async (id) => await axios.get(`${apiEndpoint}/${id}`);
+export const getByIdTodo = async (id) => {
+    try{
+        const response = await axios.get(`${apiEndpoint}/${id}`);
+        return response;
+    }catch(err){
+        console.log(err)
+    }
+}
